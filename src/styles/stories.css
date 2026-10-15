@@ -1,0 +1,98 @@
+/* stories — design y 6133..6767 (height 634px) in the 1440px Figma frame. Keep the height exact. */
+.stories {
+  position: relative;
+  height: 634px;
+  background: #0b1310;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Left intro column (x 160) */
+.stories-intro { position: absolute; left: 160px; top: 0; width: 260px; height: 100%; }
+.stories-eyebrow {
+  position: absolute; left: 0; top: 173.8px; white-space: nowrap;
+  font-size: 17.6px; line-height: 26px; font-weight: 400; text-transform: uppercase;
+}
+.stories-title {
+  position: absolute; left: 0; top: 202px; white-space: nowrap;
+  font-size: 31.3px; line-height: 44px; font-weight: 400;
+}
+.stories-body {
+  position: absolute; left: 0; top: 312.7px; width: 205px;
+  font-size: 13.65px; line-height: 21px; font-weight: 500;
+}
+.stories-watch { position: absolute; left: 0; top: 419px; display: block; width: 200px; height: 41px; color: #fff; text-align: left; }
+.stories-watch-icon {
+  position: absolute; left: 0; top: 0; width: 41px; height: 41px; border-radius: 50%;
+  background: #323836; border: 1px solid #565b59;
+}
+.stories-watch-icon svg {
+  position: absolute; left: 14px; top: 11px; width: 15.6px; height: 17.4px; overflow: visible;
+  fill: #989b9a; stroke: #4a4f4d; stroke-width: 0.8px;
+}
+.stories-watch-label {
+  position: absolute; left: 57px; top: 9.5px; white-space: nowrap;
+  font-size: 15.6px; line-height: 24px; font-weight: 500;
+}
+
+/* Centre card */
+.stories-card {
+  position: absolute; left: 436px; top: 123px; width: 528px; height: 372px;
+  border-radius: 6px; overflow: hidden;
+}
+/* faint frame over the photo + light frame around the quote box (left edge renders brighter in the export) */
+.stories-card::before,
+.stories-card::after { content: ""; position: absolute; left: 0; right: 0; pointer-events: none; z-index: 1; }
+.stories-card::before { top: 0; height: 253px; border: 1px solid rgba(255, 255, 255, 0.14); border-bottom: 0; border-radius: 6px 6px 0 0; }
+.stories-card::after {
+  top: 253px; bottom: 0; border: 1px solid rgba(255, 255, 255, 0.35); border-top: 0;
+  border-left-color: rgba(255, 255, 255, 0.65); border-radius: 0 0 6px 6px;
+}
+.stories-media { position: absolute; left: 0; top: 0; width: 528px; height: 253px; overflow: hidden; }
+.stories-media-img {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none;
+  object-fit: cover; filter: brightness(0.468);
+}
+.stories-play {
+  position: absolute; left: 216px; top: 117px; width: 69px; height: 69px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.18);
+}
+.stories-play svg {
+  position: absolute; left: 26px; top: 20px; width: 21px; height: 25px; overflow: visible;
+  fill: #fff; filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.6));
+}
+.stories-media.is-playing .stories-play svg { left: 22px; }
+
+.stories-quote { position: absolute; left: 35px; top: 262.9px; width: 460px; }
+.stories-quote-text { font-size: 11.8px; line-height: 18px; font-weight: 500; }
+.stories-quote-author { position: absolute; left: 0; top: 65.5px; font-size: 11.7px; line-height: 12px; white-space: nowrap; }
+.stories-quote-author strong { font-weight: 700; }
+.stories-quote-author em { font-weight: 400; font-style: italic; }
+
+.stories-dots { position: absolute; left: 666px; top: 502px; display: flex; gap: 12px; }
+.stories-dot { width: 8px; height: 8px; border-radius: 50%; background: #d9d9d9; }
+.stories-dot.is-active { background: #d9d9d9; }
+
+/* Playlist */
+.stories-list { position: absolute; left: 997px; top: 0; width: 283px; }
+.stories-row-wrap { position: absolute; left: 0; width: 283px; height: 98px; }
+.stories-row {
+  position: relative; display: block; width: 283px; height: 98px; text-align: left; color: #fff;
+  border: 2px solid #2c2827; border-radius: 5px; background: #0c1411;
+}
+.stories-thumb {
+  position: absolute; left: -2px; top: -2px; width: 100px; height: 98px; overflow: hidden;
+  border-radius: 5px 0 0 5px;
+}
+.stories-thumb > img:first-child { position: absolute; max-width: none; object-fit: cover; filter: brightness(0.3); }
+.stories-thumb-play { position: absolute; left: 67px; top: 63px; width: 31px; height: 31px; }
+.stories-row-name {
+  position: absolute; left: 112px; top: 23.7px; white-space: nowrap;
+  font-size: 13.65px; line-height: 20px; font-weight: 700;
+}
+.stories-row-city {
+  position: absolute; left: 112px; top: 48.9px; white-space: nowrap;
+  font-size: 10.35px; line-height: 15px; font-weight: 400;
+}
+.stories-row-city span { color: #e51a4b; }
+.stories-row:hover, .stories-row.is-active { background: #0c1411; }

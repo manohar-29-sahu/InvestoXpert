@@ -1,0 +1,57 @@
+/* stats — design y 5848..6133 (height 285px) in the 1440px Figma frame. Keep the height exact. */
+.stats {
+  position: relative;
+  height: 285px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Gradient bar x 160..1280, y 5848..5982. Offsets below are from the section top. */
+.stats__bar {
+  position: absolute;
+  left: 160px;
+  top: 0;
+  width: 1120px;
+  height: 134px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #1c0309 0%, #820f2b 50%, #1c0309 100%);
+  color: #fff;
+}
+.stats__cell { position: absolute; top: 0; height: 100%; }
+.stats__cell--building { left: 0; }
+.stats__cell--people { left: 284px; }
+.stats__cell--handshake { left: 556px; }
+.stats__cell--pin { left: 816px; }
+
+/* Thin white dividers between cells. */
+.stats__cell + .stats__cell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 26.5px;
+  width: 1.46px;
+  height: 73.1px;
+  background: #fff;
+}
+.stats__cell--people::before { transform: translateX(-0.32px); }
+
+.stats__icon { position: absolute; fill: #fff; }
+.stats__cell--building .stats__icon { left: 43px; top: 39.4px; }
+.stats__cell--people .stats__icon { left: 25px; top: 43.4px; }
+.stats__cell--handshake .stats__icon { left: 25px; top: 47.4px; }
+.stats__cell--pin .stats__icon { left: 30px; top: 39.4px; }
+
+.stats__value,
+.stats__label,
+.stats__detail { position: absolute; white-space: nowrap; }
+.stats__cell--building :is(.stats__value, .stats__label, .stats__detail) { left: 119.93px; }
+.stats__cell--people :is(.stats__value, .stats__label, .stats__detail) { left: 107.87px; }
+.stats__cell--handshake :is(.stats__value, .stats__label, .stats__detail) { left: 96.11px; }
+.stats__cell--pin :is(.stats__value, .stats__label, .stats__detail) { left: 96.35px; }
+
+.stats__value { top: 25.25px; font-size: 29.2px; line-height: 40px; font-weight: 400; }
+.stats__label { top: 68.65px; font-size: 13.16px; line-height: 20px; font-weight: 400; }
+.stats__detail { top: 88.5px; font-size: 10.69px; line-height: 16px; font-weight: 400; }
+.stats__detail span { display: block; }
+.stats__cell--pin .stats__label { top: 38.7px; }
+.stats__cell--pin .stats__detail { top: 58.45px; }

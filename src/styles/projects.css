@@ -1,0 +1,418 @@
+/* projects — design y 1145..1730 (height 585px) in the 1440px Figma frame. Keep the height exact. */
+.projects {
+  position: relative;
+  height: 585px;
+  background: #fff;
+  overflow: visible; /* the city dropdown may extend past the section */
+  z-index: 2;
+  --pj-inter: var(--font-inter), "Inter", var(--font-system);
+}
+
+/* ---- heading block (positions measured from the design; tops = baseline - 1.1em at line-height 1.5) ---- */
+.projects-eyebrow {
+  position: absolute;
+  left: 160px;
+  top: 99.43px;
+  margin: 0;
+  font-size: 15.36px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e51a4b;
+}
+
+.projects-title-wrap {
+  position: absolute;
+  left: 160px;
+  top: 124.34px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.projects-title {
+  transform: translateY(0.37px); /* sub-pixel baseline from the design (visible on hi-dpi screens) */
+  margin: 0;
+  font-size: 24.37px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #070a0f;
+  white-space: nowrap;
+}
+
+.projects-city-toggle {
+  display: block;
+  margin: 11.48px 0 0 6.03px;
+  padding: 0;
+  width: 19.67px;
+  height: 12.33px;
+  border: 0;
+  background: none;
+  color: #e51a4b;
+  cursor: pointer;
+}
+
+.projects-city-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.projects-city-toggle svg {
+  display: block;
+  transition: transform 0.15s ease;
+  width: 19.67px;
+  height: 12.33px;
+}
+
+.projects-city-menu {
+  position: absolute;
+  top: 40px;
+  right: -24px;
+  z-index: 20;
+  min-width: 160px;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ebeded;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.projects-city-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+.projects-city-menu button:hover,
+.projects-city-menu [aria-selected="true"] button {
+  background: #fdeef2;
+  color: #e51a4b;
+}
+
+.projects-note {
+  position: absolute;
+  left: 160px;
+  top: 160.51px;
+  margin: 0;
+  font-family: var(--pj-inter);
+  font-size: 11.66px;
+  font-weight: 480; /* Inter renders lighter in the browser than in the Figma export */
+  letter-spacing: -0.045px;
+  line-height: 1.5;
+  color: #a7a7a7;
+  white-space: pre;
+}
+
+/* ---- filter chips + view all ---- */
+.projects-toolbar {
+  position: absolute;
+  left: 625.33px;
+  top: 122.33px;
+  display: flex;
+  align-items: center;
+  gap: 21.33px;
+  height: 30.33px;
+}
+
+.projects-chips {
+  display: flex;
+  gap: 21.33px;
+}
+
+.projects-chip {
+  height: 30.33px;
+  padding: 2px 0 0;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.33px #ebeded;
+  font-family: var(--pj-inter);
+  font-size: 9.17px;
+  font-weight: 500;
+  line-height: 28.33px;
+  text-align: center;
+  color: #111;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.projects-chip:hover {
+  box-shadow: inset 0 0 0 1.33px #e51a4b;
+}
+
+.projects-chip.is-active {
+  background: #e51a4b;
+  box-shadow: none;
+  color: #fff;
+}
+
+.projects-viewall {
+  margin-left: 0.31px;
+  transform: translateY(0.44px); /* sub-pixel baseline from the design (visible on hi-dpi screens) */
+  display: flex;
+  align-items: center;
+  font-size: 12.2px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e51a4b;
+  white-space: nowrap;
+}
+
+.projects-viewall-arrow {
+  display: block;
+  width: 12px;
+  height: 10px;
+  margin-left: 15.49px;
+}
+
+/* ---- cards ---- */
+.projects-grid {
+  position: absolute;
+  left: 160px;
+  top: 188.67px;
+  display: flex;
+  gap: 25px;
+}
+
+.pcard {
+  position: relative;
+  width: 256px;
+  height: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2.4px 3.1px 0.7px rgba(0, 0, 0, 0.114), 0 14px 10.5px -2.2px rgba(0, 0, 0, 0.117);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.pcard.is-active,
+.pcard:hover,
+.pcard:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -4px rgba(0, 0, 0, 0.16), 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.pcard-media {
+  position: relative;
+  height: 126px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+/* the design darkens the top of each render (black, 60% → 0 over 47px) */
+.pcard-media::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 47px;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pcard-img {
+  display: block;
+  width: 100%;
+  height: 126px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pcard.is-active .pcard-img,
+.pcard:hover .pcard-img {
+  transform: scale(1.05);
+}
+
+.pcard-tag {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  display: block;
+  height: 24px;
+  width: auto;
+}
+
+.pcard-badge {
+  position: absolute;
+  left: 16px;
+  top: 103.33px;
+  display: block;
+  width: 47px;
+  height: 23px;
+}
+
+.pcard--tight .pcard-tag,
+.pcard--tight .pcard-badge {
+  left: 8px;
+}
+
+.pcard-badge img {
+  display: block;
+}
+
+.pcard-badge--boxed {
+  padding: 5px 0 0 6.5px;
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+}
+
+.pcard-name,
+.pcard-loc,
+.pcard-price,
+.pcard-config,
+.pcard-poss {
+  position: absolute;
+  left: 16px;
+  margin: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.pcard-name {
+  top: 135.06px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.pcard-loc {
+  top: 165.13px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a0a1a1;
+}
+
+.pcard-price {
+  top: 187.84px;
+  font-family: var(--pj-inter);
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.pcard-price span {
+  margin-left: -0.6px;
+  vertical-align: 1.08px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a0a1a1;
+}
+
+.pcard-config,
+.pcard-poss {
+  font-family: var(--pj-inter);
+  font-size: 10px;
+  font-weight: 480;
+  letter-spacing: -0.03px;
+  color: #a0a1a1;
+}
+
+.pcard-config {
+  top: 215.19px;
+}
+
+.pcard-poss {
+  top: 236.19px;
+}
+
+.pcard-score {
+  position: absolute;
+  left: 146px;
+  top: 235px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 16.33px;
+  border: 1px solid #198838;
+  border-radius: 999px;
+  padding: 1.6px 1px 0 0;
+  font-size: 6px;
+  font-weight: 500;
+  color: #198838;
+  white-space: nowrap;
+}
+
+.pcard-score--filled {
+  border-color: #f3f3df;
+  background: #f3f3df;
+}
+
+.pcard-btn {
+  position: absolute;
+  left: 16px;
+  top: 258px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 224px;
+  height: 32px;
+  padding: 0 12.03px 0 13.9px;
+  border: 0;
+  border-radius: 3px;
+  background: #9c9c9c;
+  color: #fff;
+  font-size: 10.23px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.pcard-btn--primary,
+.pcard.is-active .pcard-btn,
+.pcard:hover .pcard-btn {
+  background: #e51a4b;
+  box-shadow: 0 4px 12px rgba(229, 26, 75, 0.35);
+}
+
+.pcard-btn:hover {
+  filter: brightness(0.94);
+}
+
+.pcard-btn-arrow {
+  display: block;
+  width: 12px;
+  height: 10px;
+  transition: transform 0.22s ease;
+}
+
+.pcard.is-active .pcard-btn-arrow,
+.pcard:hover .pcard-btn-arrow {
+  transform: translateX(3px);
+}
+
+.projects-empty {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 1120px;
+  height: 300px;
+  padding: 0 32px;
+  border: 1px dashed #ebeded;
+  border-radius: 8px;
+  color: #777;
+  font-size: 14px;
+}
+
+.projects-empty p {
+  margin: 0;
+}
+
+.projects-empty-btn {
+  height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 3px;
+  background: #e51a4b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}

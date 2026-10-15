@@ -1,0 +1,130 @@
+/* Phone layout (< 1200px: phones and tablets) for the insights section. Desktop rules live in ../insights.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Heading stacked; the two carousel arrows sit right-aligned under it; cards in a scroll-snap rail. */
+  .insights {
+    height: auto;
+    padding: 48px 16px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    column-gap: 10px;
+    align-items: center;
+  }
+  .insights__eyebrow,
+  .insights__title,
+  .insights__body {
+    grid-column: 1 / -1;
+    position: static;
+    white-space: normal;
+  }
+  .insights__eyebrow { font-size: 14px; line-height: 20px; }
+  .insights__title { margin-top: 8px; font-size: 24px; line-height: 32px; text-wrap: balance; }
+  .insights__body { margin-top: 10px; font-size: 14px; line-height: 22px; text-wrap: pretty; }
+  /* the desktop line break would leave an orphan here; the TSX keeps a space before it */
+  .insights__body br { display: none; }
+
+  .insights__arrow {
+    position: static;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .insights__arrow--prev { grid-column: 2; }
+  .insights__arrow--next { grid-column: 3; }
+  .insights__arrow svg { width: 32px; height: 32px; }
+
+  /* Rail: bleeds to the screen edges, snaps card by card, leaves room for the card shadows. */
+  .insights__grid {
+    grid-column: 1 / -1;
+    position: static;
+    inset: auto;
+    pointer-events: auto;
+    margin: 4px -16px 0;
+    padding: 12px 16px 28px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(300px, calc(100% - 44px));
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+  .insights__grid::-webkit-scrollbar { display: none; }
+
+  .icard {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+  /* Same crop as desktop: box keeps the 246:180 ratio, image offsets converted to percentages. */
+  .icard__media {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 246 / 180;
+  }
+  .icard__img { left: -0.41%; top: -21.56%; width: 100.41%; height: 171.56%; }
+  .icard__img--outlook { top: -29.89%; }
+  .icard__img--news18 { left: -0.28%; top: -29.78%; width: 100.69%; height: 172%; }
+  .icard__img--timesproperty { top: -29.61%; }
+
+  .icard__body,
+  .icard--1 .icard__body,
+  .icard--2 .icard__body,
+  .icard--3 .icard__body {
+    position: static;
+    width: auto;
+    flex: 1;
+    padding: 16px 4px 2px;
+    justify-content: flex-start;
+  }
+  .icard--1 .icard__title,
+  .icard--1 .icard__excerpt,
+  .icard--1 .icard__foot { position: static; }
+
+  .icard__tag {
+    width: auto;
+    height: 28px;
+    padding: 0 12px;
+    font-size: 12px;
+    line-height: 28px;
+  }
+  .icard__title { margin-top: 12px; font-size: 16px; line-height: 24px; }
+  .icard__excerpt {
+    margin-top: 10px;
+    width: auto;
+    max-height: 66px;
+    font-size: 13px;
+    line-height: 22px;
+    background: linear-gradient(180deg, #383838 0px, #ffffff 76px);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .icard__excerpt--solid { min-height: 0; background: none; }
+  .icard__foot {
+    margin-top: auto;
+    padding-top: 14px;
+    width: auto;
+    align-self: stretch;
+    height: auto;
+    min-height: 40px;
+  }
+  .icard__more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  /* Publication marks are drawn at desktop size; enlarge them as a unit. */
+  .icard__foot .src { transform: scale(1.5); transform-origin: right center; }
+}

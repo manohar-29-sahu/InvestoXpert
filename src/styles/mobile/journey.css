@@ -1,0 +1,73 @@
+/* Phone layout (< 1200px: phones and tablets) for the journey section. Desktop rules live in ../journey.css — never edit those here. */
+@media (max-width: 1199px) {
+  .journey { height: auto; padding: 40px 16px 56px; }
+
+  /* Dark banner: text block, then the photo full width */
+  .journey-banner {
+    position: relative; left: auto; top: auto; width: auto; height: auto;
+    display: flex; flex-direction: column; align-items: flex-start;
+    padding-top: 32px;
+  }
+  .journey-banner-media { position: relative; order: 1; left: auto; top: auto; width: 100%; height: auto; margin-top: 28px; aspect-ratio: 1300 / 743; }
+  .journey-banner-img { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+  .journey-eyebrow,
+  .journey-title,
+  .journey-body { position: static; margin-inline: 20px; }
+  /* underline drawn on the eyebrow itself so it always matches the text width */
+  .journey-eyebrow-line { display: none; }
+  .journey-eyebrow {
+    white-space: normal; font-size: 14px; line-height: 22px;
+    padding-bottom: 4px; border-bottom: 1px solid #e51a4b;
+  }
+  .journey-title { margin-top: 18px; white-space: normal; font-size: clamp(24px, 7vw, 28px); line-height: 1.42; }
+  .journey-body { margin-top: 14px; width: auto; max-width: 420px; font-size: 14px; line-height: 22px; }
+
+  /* Commitment intro (centred) */
+  .journey-commit { position: static; width: auto; margin-top: 40px; display: flex; flex-direction: column; align-items: center; }
+  .journey-commit-title { position: static; font-size: 15px; line-height: 24px; }
+  .journey-commit-line { position: static; display: block; margin-top: 10px; width: 180px; }
+  .journey-commit-body { position: static; margin-top: 12px; width: auto; max-width: 360px; font-size: 14px; line-height: 22px; }
+
+  /* Timeline: one column, line + dots at x 24 of the viewport (8px into the list), every step = text then photo */
+  .journey-line { display: none; }
+  .journey-steps {
+    position: relative; inset: auto; margin-top: 40px; padding-left: 32px;
+    display: flex; flex-direction: column; gap: 40px;
+  }
+  .journey-steps::before { content: ""; position: absolute; left: 7px; top: 15px; bottom: 0; width: 2px; background: #000; }
+  .journey-step {
+    position: relative;
+    display: grid; grid-template-columns: 40px minmax(0, 1fr) 64px; column-gap: 12px; align-items: start;
+  }
+  .journey-step::before {
+    content: ""; position: absolute; left: -29px; top: 11px; width: 10px; height: 10px; border-radius: 50%;
+    background: #000;
+  }
+  /* flatten number + copy into the step grid so the body can use the full text width */
+  .journey-step-text,
+  .journey-step-copy { display: contents; }
+  .journey-step-n {
+    position: static; grid-column: 1; grid-row: 1 / span 3;
+    font-size: 28px; line-height: 32px;
+  }
+  .journey-step-title {
+    position: static; grid-column: 2; grid-row: 1; white-space: normal;
+    font-size: 20px; line-height: 28px; padding-top: 2px;
+  }
+  .journey-step-rule { position: static; display: block; grid-column: 2; grid-row: 2; margin-top: 8px; }
+  .journey-step-kicker { position: static; grid-column: 2; grid-row: 3; margin-top: 8px; white-space: normal; font-size: 13px; line-height: 20px; }
+  .journey-step-body { position: static; grid-column: 2 / span 2; grid-row: 4; width: auto; margin-top: 8px; font-size: 14px; line-height: 22px; }
+  .journey-step-icon {
+    position: relative; left: 0 !important; top: 0 !important; grid-column: 3; grid-row: 1 / span 3;
+    width: 64px; height: 64px;
+  }
+  .journey-step-icon svg { width: 64px; height: 64px; }
+  .journey-step-img {
+    position: relative; left: 0 !important; top: 0 !important; grid-column: 1 / -1; grid-row: 5;
+    width: 100%; height: auto; margin-top: 16px; aspect-ratio: 16 / 9;
+  }
+  .journey-step-img img {
+    left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important;
+    object-fit: cover;
+  }
+}

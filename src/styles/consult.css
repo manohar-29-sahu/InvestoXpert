@@ -1,0 +1,82 @@
+/* consult — design y 3903..4369 (height 466px) in the 1440px Figma frame. Keep the height exact. */
+.consult {
+  position: relative;
+  height: 466px;
+  background: #0c0c0c;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--font-system);
+}
+.consult__bg {
+  position: absolute;
+  inset: 0;
+  /* the export has a 1px white first row: push it above the section edge */
+  background-size: 1441px 466.3px;
+  background-position: 0 -0.76px;
+  background-repeat: no-repeat;
+}
+
+
+.consult__inner { position: absolute; inset: 0; }
+.consult__eyebrow {
+  position: absolute;
+  left: 255.3px;
+  top: 135.4px;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  color: #f6f2ea;
+  white-space: nowrap;
+}
+.consult__title {
+  position: absolute;
+  left: 256.5px;
+  top: 180.4px;
+  font-size: 41px;
+  line-height: 1;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+}
+.consult__body {
+  position: absolute;
+  left: 255.6px;
+  top: 239.1px;
+  width: 580px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #efebe8;
+}
+.consult__cta {
+  position: absolute;
+  left: 255px;
+  top: 321px;
+  width: 72px;
+  height: 28px;
+  border-radius: 4px;
+  background: #fd3868;
+  color: #fff;
+  font-size: 8.7px;
+  font-weight: 600;
+  padding-bottom: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+.consult__cta:hover { background: #ea2457; }
+
+/* Desktop / scaled canvas: the image already shows the copy and button, so the HTML layer keeps
+   its exact position but draws no ink (still selectable, accessible and clickable). */
+@media (min-width: 1200px) {
+  .consult__eyebrow,
+  .consult__title,
+  .consult__body,
+  .consult__cta { color: transparent; }
+  .consult__cta,
+  .consult__cta:hover { background: transparent; }
+  .consult__cta:hover { box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.08); }
+  .consult ::selection { color: #fff; background: rgba(229, 26, 75, 0.45); }
+}

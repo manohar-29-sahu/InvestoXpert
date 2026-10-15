@@ -1,0 +1,162 @@
+/* Phone layout (< 1200px: phones and tablets) for the projects section. Desktop rules live in ../projects.css — never edit those here. */
+@media (max-width: 1199px) {
+  .projects {
+    height: auto;
+    padding: 48px 16px 0;
+  }
+
+  /* ---- heading: eyebrow, title + city caret, note ---- */
+  .projects-eyebrow {
+    position: static;
+    font-size: 15px;
+  }
+
+  .projects-title-wrap {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap; /* no break between "Gurgaon" and the caret; the title itself still wraps */
+  }
+  .projects-title {
+    display: inline;
+    transform: none;
+    font-size: 24px;
+    line-height: 34px;
+    white-space: normal;
+  }
+  /* 40px tap target around the 20x12 caret; negative margins keep it visually next to the title */
+  .projects-city-toggle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin: -16px -10px -14px -4px;
+    padding: 14px 10px;
+  }
+  .projects-city-menu {
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin-top: 6px;
+  }
+  .projects-city-menu button {
+    min-height: 40px;
+    font-size: 15px;
+  }
+
+  .projects-note {
+    position: static;
+    margin-top: 4px;
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+
+  /* ---- chips (horizontal scroll row) + view all ---- */
+  .projects-toolbar {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .projects-chips {
+    gap: 8px;
+    margin: 0 -16px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .projects-chips::-webkit-scrollbar { display: none; }
+  .projects-chip {
+    flex: none;
+    width: auto !important; /* overrides the design's fixed inline chip widths */
+    height: 40px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 40px;
+  }
+  .projects-viewall {
+    align-self: flex-start;
+    height: 40px;
+    margin-left: 0;
+    transform: none;
+    font-size: 14px;
+  }
+  .projects-viewall-arrow { margin-left: 10px; }
+
+  /* ---- cards: horizontal scroll-snap rail ---- */
+  .projects-grid {
+    position: static;
+    gap: 16px;
+    margin: 4px -16px 0;
+    padding: 8px 16px 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .projects-grid::-webkit-scrollbar { display: none; }
+
+  .pcard {
+    flex: 0 0 280px;
+    width: 280px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    scroll-snap-align: start;
+  }
+  .pcard-media { align-self: stretch; height: 150px; }
+  .pcard-img { height: 150px; }
+  .pcard-badge { top: auto; bottom: 0; }
+
+  .pcard-name,
+  .pcard-loc,
+  .pcard-price,
+  .pcard-config,
+  .pcard-poss {
+    position: static;
+    margin: 0 16px;
+  }
+  .pcard-name { margin-top: 10px; font-size: 17px; }
+  .pcard-loc { margin-top: 2px; font-size: 13px; }
+  .pcard-price { margin-top: 6px; font-size: 17px; }
+  .pcard-config { margin-top: 6px; font-size: 12px; }
+  .pcard-poss { margin-top: 2px; font-size: 12px; }
+
+  .pcard-score {
+    position: static;
+    width: auto;
+    height: 24px;
+    margin: 10px 16px 0;
+    padding: 1px 10px 0;
+    font-size: 11px;
+  }
+
+  .pcard-btn {
+    position: static;
+    align-self: stretch;
+    width: auto;
+    height: 44px;
+    margin: 14px 16px 0;
+    padding: 0 14px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .projects-empty {
+    flex: 1 0 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    padding: 24px 20px;
+  }
+  .projects-empty-btn { height: 40px; font-size: 14px; }
+}

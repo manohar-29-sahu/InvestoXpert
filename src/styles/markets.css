@@ -1,0 +1,205 @@
+/* markets — design y 1730..2281 (height 551px) in the 1440px Figma frame. Keep the height exact. */
+.markets {
+  position: relative;
+  height: 551px;
+  background: #fff;
+  overflow: hidden;
+  --mk-light: var(--font-poppins-light), var(--font);
+}
+
+/* tops = baseline - 1.1em at line-height 1.5 (baselines measured from the design) */
+.markets-eyebrow {
+  position: absolute;
+  left: 160px;
+  top: 105.4px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e51a4b;
+}
+
+.markets-title {
+  position: absolute;
+  left: 160px;
+  top: 137.33px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #070a0f;
+  white-space: nowrap;
+}
+
+.markets-intro {
+  position: absolute;
+  left: 841.4px;
+  top: 119.73px;
+  width: 440px;
+  margin: 0;
+  font-family: var(--mk-light);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #a7a7a7;
+}
+
+.markets-grid {
+  position: absolute;
+  left: 160px;
+  top: 191px;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mcard {
+  position: relative;
+  width: 216px;
+  height: 233px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2.4px 3.1px 0.7px rgba(0, 0, 0, 0.114), 0 14px 10.5px -2.2px rgba(0, 0, 0, 0.117);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+/* the last card is 1px shorter in the design */
+.mcard:nth-child(5) {
+  height: 232px;
+}
+
+.mcard.is-active,
+.mcard:hover,
+.mcard:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -4px rgba(0, 0, 0, 0.16), 0 6px 16px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.mcard-media {
+  position: relative;
+  width: 100%;
+  height: 124px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+}
+
+.mcard-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mcard.is-active .mcard-img,
+.mcard:hover .mcard-img {
+  transform: scale(1.05);
+}
+
+.mcard-city,
+.mcard-price {
+  position: absolute;
+  left: 16px;
+  margin: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.mcard-city {
+  top: 132.5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.mcard-price {
+  top: 164.13px;
+  font-size: 12px;
+}
+
+.mcard-price-label {
+  margin-right: 9.5px;
+  font-family: var(--mk-light);
+  font-weight: 300;
+  color: #8d8d8d;
+}
+
+.mcard-price-currency {
+  font-family: var(--font-inter-mk), "Inter", var(--font-system);
+  font-weight: 300;
+  color: #474248;
+  white-space: pre;
+}
+
+.mcard-price-value {
+  font-weight: 500;
+  color: #474248;
+}
+
+.mcard-price-unit {
+  font-weight: 500;
+  color: #abaaaa;
+  white-space: pre;
+}
+
+.mcard-btn {
+  position: absolute;
+  left: 16px;
+  top: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 185px;
+  height: 31px;
+  padding: 0 12px 0 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #a4a4a4;
+  white-space: nowrap;
+  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.mcard-btn span,
+.mcard-btn svg {
+  position: relative;
+  top: -1px;
+}
+
+.mcard-btn--primary,
+.mcard.is-active .mcard-btn,
+.mcard:hover .mcard-btn {
+  background: #e51a4b;
+  border-color: #e51a4b;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(229, 26, 75, 0.35);
+}
+
+.mcard-btn--primary:hover,
+.mcard.is-active .mcard-btn:hover {
+  background: #cc1440;
+  border-color: #cc1440;
+}
+
+.mcard-btn svg,
+.mcard-btn-arrow {
+  display: block;
+  width: 10px;
+  height: 8px;
+  transition: transform 0.22s ease;
+}
+
+.mcard.is-active .mcard-btn svg,
+.mcard:hover .mcard-btn svg,
+.mcard.is-active .mcard-btn-arrow,
+.mcard:hover .mcard-btn-arrow {
+  transform: translateX(3px);
+}

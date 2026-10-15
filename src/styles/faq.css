@@ -1,0 +1,218 @@
+/* faq — design y 10336..11083 (height 747px) in the 1440px Figma frame. Keep the height exact.
+   min-height (not height) so an opened answer can grow the section; the default state renders exactly 747px. */
+.faq {
+  position: relative;
+  min-height: 747px;
+  padding: 481.65px 0 51.4px;
+  background: #fff;
+  overflow: hidden;
+}
+/* anti-aliased top edge of the footer band falls on this section's last row */
+.faq::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* right-hand photo with a soft dark radial shade */
+.faq-photo {
+  position: absolute;
+  left: 802.99px;
+  top: 0;
+  width: 637.01px;
+  height: 481px;
+  overflow: hidden;
+  background: #000;
+}
+.faq-photo img {
+  position: absolute;
+  left: -102.99px;
+  top: -18px;
+  width: 770px;
+  max-width: none;
+  height: 513px;
+}
+.faq-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 380px at 319.5px 237.8px, rgba(0, 0, 0, 0.03), #000);
+}
+
+.faq-eyebrow {
+  position: absolute;
+  left: 155.05px;
+  top: 43.79px;
+  margin: 0;
+  font-size: 14.2px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #e51a4b;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.faq-eyebrow-line {
+  position: absolute;
+  left: -35px;
+  top: 10.21px;
+  width: 24px;
+  height: 1px;
+  background: #ee6989;
+}
+.faq-title {
+  position: absolute;
+  left: 120.05px;
+  top: 94.88px;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 61px;
+  color: #000;
+  white-space: nowrap;
+}
+.faq-accent { color: #e41d25; }
+.faq-lead {
+  position: absolute;
+  left: 120.05px;
+  top: 244.07px;
+  width: 645px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.08px;
+  color: #000;
+}
+
+.faq-actions { position: absolute; left: 0; top: 343.66px; }
+.faq-btn {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+.faq-btn--primary { left: 120.05px; width: 311.35px; background: #e51a4b; }
+.faq-btn--primary:hover { background: #cc1540; }
+.faq-btn--secondary { left: 446.4px; width: 294px; background: #7f7f7f; }
+.faq-btn--secondary:hover { background: #6c6c6c; }
+.faq-btn-label { position: absolute; top: 18.8px; }
+.faq-btn--primary .faq-btn-label { left: 58.43px; }
+.faq-btn--secondary .faq-btn-label { left: 64.04px; }
+.faq-btn svg { position: absolute; overflow: visible; }
+.faq-btn-icon--cal { left: 29.95px; top: 19.74px; }
+.faq-btn-icon--phone { left: 31.2px; top: 18.54px; }
+.faq-btn-arrow { left: 270.45px; top: 20.6px; transition: transform 0.15s ease; }
+.faq-btn--primary:hover .faq-btn-arrow { transform: translateX(3px); }
+
+/* grey "still have questions" + accordion panel */
+.faq-panel {
+  position: relative;
+  margin-left: 120.05px;
+  width: 1217.9px;
+  min-height: 213.95px;
+  border-radius: 4px;
+  background: #faf9f9;
+}
+.faq-help { position: absolute; inset: 0 auto 0 0; width: 470px; }
+.faq-help::after {
+  content: "";
+  position: absolute;
+  left: 435.95px;
+  top: 33.35px;
+  width: 1px;
+  height: 149px;
+  background: #ddd;
+}
+.faq-help-icon { position: absolute; left: 27.25px; top: 56.35px; overflow: visible; }
+.faq-help-title {
+  position: absolute;
+  left: 158.99px;
+  top: 43.76px;
+  margin: 0;
+  font-size: 18.7px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #000;
+  white-space: nowrap;
+}
+.faq-help-body {
+  position: absolute;
+  left: 158.99px;
+  top: 81.86px;
+  width: 255px;
+  margin: 0;
+  font-size: 11.9px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #000;
+}
+.faq-help-link {
+  position: absolute;
+  left: 158.99px;
+  top: 147.35px;
+  height: 18px;
+  padding-right: 34px;
+  font-size: 12.6px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #e51a4b;
+  white-space: nowrap;
+}
+.faq-help-arrow { position: absolute; left: 107.96px; top: 3.3px; overflow: visible; transition: transform 0.15s ease; }
+.faq-help-link:hover .faq-help-arrow { transform: translateX(3px); }
+
+.faq-list {
+  position: relative;
+  margin: 0 0 0 465.96px;
+  padding: 19.06px 0 19px;
+  width: 702.94px;
+  list-style: none;
+}
+.faq-item { position: relative; }
+.faq-item + .faq-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.29px;
+  height: 1px;
+  background: #ddd;
+}
+.faq-q { margin: 0; font: inherit; }
+.faq-q button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0;
+  text-align: left;
+  font-size: 15.87px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #000;
+}
+.faq-q-text { position: relative; top: 1.4px; }
+.faq-plus {
+  position: absolute;
+  left: 694.94px;
+  top: 13.5px;
+  overflow: visible;
+  transition: transform 0.2s ease;
+}
+.faq-item.is-open .faq-plus { transform: rotate(45deg); }
+.faq-a {
+  padding: 2px 40px 12px 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #555;
+}

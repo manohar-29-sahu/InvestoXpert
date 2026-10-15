@@ -1,0 +1,54 @@
+/* developers — design y 1024..1145 (height 121px) in the 1440px Figma frame. Keep the height exact. */
+.developers {
+  position: relative;
+  height: 121px;
+  background: #f7f8f8;
+  overflow: hidden;
+}
+
+.developers-title {
+  position: absolute;
+  left: 154px;
+  top: 43px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  color: #1a1a18;
+  white-space: nowrap;
+}
+
+.developers-rule {
+  position: absolute;
+  left: 278px;
+  top: 40px;
+  width: 1px;
+  height: 40px;
+  background: #000;
+}
+
+.developers-list { position: absolute; inset: 0; }
+.developers-item { position: absolute; }
+.developers-item img { max-width: none; }
+
+.developers-more {
+  position: absolute;
+  left: 1187px;
+  top: 40px;
+  width: 98px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  padding-left: 3px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #000;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+.developers-more:hover { background: #fff; }

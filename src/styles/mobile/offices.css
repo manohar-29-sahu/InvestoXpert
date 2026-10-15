@@ -1,0 +1,144 @@
+/* Phone layout (< 1200px: phones and tablets) for the offices section. Desktop rules live in ../offices.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Heading stacked, then the eight office cards in a horizontal scroll-snap rail. */
+  .offices {
+    height: auto;
+    padding: 48px 16px 16px;
+  }
+  .offices__eyebrow,
+  .offices__title,
+  .offices__body {
+    position: static;
+    white-space: normal;
+  }
+  .offices__eyebrow { font-size: 14px; line-height: 20px; }
+  .offices__title { margin-top: 8px; font-size: 24px; line-height: 32px; text-wrap: balance; }
+  .offices__body { margin-top: 10px; font-size: 14px; line-height: 22px; color: rgba(0, 0, 0, 0.55); text-wrap: pretty; }
+  /* the desktop line break would leave an orphan here; the TSX keeps a space before it */
+  .offices__body br { display: none; }
+
+  .offices__grid {
+    position: static;
+    inset: auto;
+    margin: 12px -16px 0;
+    padding: 12px 16px 28px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(300px, calc(100% - 44px));
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+  .offices__grid::-webkit-scrollbar { display: none; }
+
+  /* Card grid: [icon | text] rows; the two buttons share the last row in equal halves. */
+  .office-card,
+  .office-card:nth-child(4n + 1),
+  .office-card:nth-child(4n + 2),
+  .office-card:nth-child(4n + 3),
+  .office-card:nth-child(4n + 4),
+  .office-card:nth-child(-n + 4),
+  .office-card:nth-child(n + 5) {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 0 14px 16px;
+    display: grid;
+    grid-template-columns: 18px calc(50% - 33px) minmax(0, 1fr);
+    /* media, city, 4 info rows, then the buttons row takes any extra height (cards are equal height) */
+    grid-template-rows: repeat(6, auto) 1fr;
+    column-gap: 10px;
+    align-items: start;
+    align-content: start;
+    scroll-snap-align: start;
+  }
+  .office-card__media {
+    grid-column: 1 / -1;
+    position: relative;
+    width: auto;
+    height: auto;
+    aspect-ratio: 271 / 159.77;
+    margin: 0 -14px 12px;
+  }
+  /* Pune's zoomed crop is set inline in px for the desktop box; same crop in percentages here. */
+  .office-card__img[alt="Pune office"] {
+    width: 108.75% !important;
+    height: 255.62% !important;
+    left: -4.24% !important;
+    top: -108.13% !important;
+  }
+  .office-card__kind {
+    left: 10px;
+    top: 10px;
+    height: 30px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 30px;
+  }
+  .office-card__city {
+    grid-column: 1 / -1;
+    position: static;
+    margin-bottom: 8px;
+    font-size: 19px;
+    line-height: 28px;
+    white-space: normal;
+  }
+
+  .office-card__icon,
+  .office-card__icon--pin,
+  .office-card[data-lines="3"] .office-card__icon--pin,
+  .office-card:nth-child(8) .office-card__icon--pin {
+    grid-column: 1;
+    position: static;
+    margin-top: 1px;
+    width: 18px;
+    height: 16px;
+  }
+  .office-card__address,
+  .office-card__row,
+  .office-card:nth-child(8) .office-card__address {
+    grid-column: 2 / -1;
+    position: static;
+    margin-bottom: 9px;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  /* design line breaks would not fit: run the lines together (Hyderabad's line 1 ends in "JNTU-") */
+  .office-card__address span { display: inline; }
+  .office-card__address span + span::before { content: " "; }
+  .office-card:nth-child(7) .office-card__address span:nth-child(2)::before { content: none; }
+
+  .office-card__maps,
+  .office-card__book {
+    position: static;
+    align-self: end;
+    margin-top: 6px;
+    width: auto;
+    height: 40px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .office-card__maps {
+    grid-column: 1 / 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .office-card__maps span,
+  .office-card__maps svg { position: static; }
+  .office-card__maps svg { flex: none; }
+  .office-card__book {
+    grid-column: 3;
+    padding: 0 6px;
+    line-height: 40px;
+  }
+}

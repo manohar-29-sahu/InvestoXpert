@@ -1,0 +1,171 @@
+/* Phone layout (< 1200px: phones and tablets) for the hero section. Desktop rules live in ../hero.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Photo band at the top (behind the header), fading to the design's black; copy + search stack below. */
+  .hero {
+    height: auto;
+    padding: 292px 16px 40px;
+  }
+
+  .hero-media {
+    inset: 0 0 auto;
+    height: 460px;
+  }
+  .hero-photo {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30% 0;
+  }
+  .hero-overlay { display: none; }
+  .hero-fade {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0.12) 42%, rgba(0, 0, 0, 0.78) 70%, #000 100%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0, rgba(0, 0, 0, 0) 65%);
+  }
+
+  /* ---- copy ---- */
+  .hero-kicker,
+  .hero-title-main,
+  .hero-title-sub,
+  .hero-body,
+  .hero-search {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .hero-kicker {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    white-space: normal;
+  }
+
+  .hero-title { display: block; margin-top: 8px; }
+  .hero-title-main {
+    display: block;
+    font-size: 44px;
+    line-height: 48px;
+    letter-spacing: -0.44px;
+  }
+  .hero-title-sub {
+    display: block;
+    margin-top: 2px;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.22px;
+    white-space: normal;
+  }
+  .hero-title-rest { top: 0; }
+
+  .hero-body {
+    width: auto;
+    max-width: 520px;
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-wrap: pretty;
+  }
+
+  /* ---- search: full-width tabs, then a stacked card ---- */
+  .hero-search {
+    width: auto;
+    height: auto;
+    margin-top: 28px;
+  }
+
+  .hero-tabs { width: 100%; height: 48px; }
+  .hero-tab,
+  .hero-tab--ai {
+    flex: 1 1 0;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 8px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .hero-tab-spark { width: 14px; height: 18px; }
+
+  .hero-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px 16px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .hero-type,
+  .hero-where { position: relative; }
+
+  .hero-label,
+  .hero-label--type,
+  .hero-label--where {
+    position: static;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  /* label 18px + 2px gap, then a 40px control row (centre at 40px) */
+  .hero-select {
+    position: static;
+    width: 100%;
+    height: 40px;
+    padding: 0 32px 0 0;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .hero-chevron {
+    left: auto;
+    right: 4px;
+    top: 34.5px;
+  }
+
+  .hero-divider--1 {
+    position: static;
+    width: 100%;
+    height: 1px;
+  }
+  .hero-divider--2 { display: none; }
+
+  .hero-search-icon {
+    left: 0;
+    top: 28px;
+    width: 22px;
+    height: 22px;
+  }
+  .hero-input {
+    position: static;
+    width: 100%;
+    height: 40px;
+    padding: 0 26px 0 32px;
+    font-size: 16px; /* >= 16px so iOS does not zoom on focus */
+    line-height: 40px;
+    text-overflow: ellipsis;
+  }
+  .hero-input::placeholder { font-size: 13px; }
+  .hero-input-spark {
+    left: auto;
+    right: 2px;
+    top: 30.5px;
+  }
+
+  .hero-submit {
+    position: static;
+    width: 100%;
+    height: 52px;
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,159 @@
+/* values — design y 8950..9754 (height 804px) in the 1440px Figma frame. Keep the height exact. */
+.values {
+  position: relative;
+  height: 804px;
+  background: #fff;
+  overflow: hidden;
+}
+/* frame edge of the "Dream home" band that sits on the last row of this section */
+.values::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #d9d9d9;
+}
+
+.values-title {
+  position: absolute;
+  left: 173.04px;
+  top: 61.03px;
+  margin: 0;
+  font-size: 43.4px;
+  font-weight: 500;
+  line-height: 60.76px;
+  color: #000;
+  white-space: nowrap;
+}
+.values-rule {
+  position: absolute;
+  left: 173.04px;
+  top: 125.62px;
+  width: 50.1px;
+  height: 2.95px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.values-sub {
+  position: absolute;
+  left: 173.04px;
+  top: 146.8px;
+  width: 450px;
+  font-size: 16.4px;
+  font-weight: 500;
+  line-height: 27.3px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* team photo + its thin drop shadow strip */
+.values-photo-shadow {
+  position: absolute;
+  left: 640.4px;
+  top: 55.63px;
+  width: 617.6px;
+  height: 472.96px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.values-photo {
+  position: absolute;
+  left: 640.4px;
+  top: 56px;
+  width: 617.6px;
+  height: 471px;
+  overflow: hidden;
+  background: #222;
+}
+.values-photo img {
+  position: absolute;
+  left: -226px;
+  top: -110px;
+  width: 1032.5px;
+  max-width: none;
+  height: 580.41px;
+  filter: brightness(0.8);
+}
+
+/* four value cards */
+.values-panel {
+  position: absolute;
+  left: 160px;
+  top: 459px;
+  width: 1072.77px;
+  height: 294.71px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 12px;
+  background: #fffdfb;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 5px 5px rgba(0, 0, 0, 0.09),
+    0 12px 7px rgba(0, 0, 0, 0.05),
+    0 21px 9px rgba(0, 0, 0, 0.01);
+}
+.value-card {
+  position: relative;
+  height: 294.71px;
+  color: #000;
+}
+.value-card + .value-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 27.29px;
+  width: 1px;
+  height: 241px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.value-icon {
+  position: absolute;
+  top: 42.6px;
+  overflow: visible;
+}
+.value-icon--shield-check { left: 107.62px; top: 44.09px; }
+.value-icon--clipboard-check { left: 107.8px; }
+.value-icon--handshake { left: 106.66px; }
+.value-icon--trophy { left: 106.1px; top: 42.62px; }
+
+.value-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 117.31px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.value-body {
+  position: absolute;
+  left: 50%;
+  top: 157.33px;
+  width: 206px;
+  margin: 0 0 0 -103px;
+  font-size: 11.76px;
+  font-weight: 400;
+  line-height: 19.3px;
+  text-align: center;
+}
+.value-rule {
+  position: absolute;
+  left: 50%;
+  top: 247.9px;
+  width: 50.1px;
+  height: 2.95px;
+  margin-left: -25.05px;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* the last divider straddles two device pixels in the design */
+.value-card:last-child::before { left: -0.58px; width: 2px; background: rgba(0, 0, 0, 0.27); }
+/* the first card sits ~1.5px higher in the design */
+.value-card:first-child .value-title { top: 115.84px; }
+.value-card:first-child .value-body { top: 155.86px; }
+.value-card:first-child .value-rule { top: 247.43px; }

@@ -1,0 +1,246 @@
+/*
+ * Tablet layer (700–1199px): builds on the fluid phone layout in ./mobile/*.css (which applies below 1200px)
+ * with wider gutters, larger type and multi-column grids. At 1200px and wider the 1440px design canvas is used.
+ */
+@media (min-width: 700px) and (max-width: 1199px) {
+  :root { --gutter: max(32px, calc((100vw - 1040px) / 2)); }
+  .container { margin-inline: var(--gutter); }
+
+  /* ---- header ---- */
+  .site-header { height: 96px; }
+  .site-logo { left: var(--gutter); top: 22px; width: 130px; height: 54px; }
+  .site-logo img { width: 130px; height: 54px; }
+  .header-contact { right: var(--gutter); top: 26px; height: 46px; padding: 1px 24px 0; border-radius: 24px; font-size: 15px; }
+
+  /* ---- hero ---- */
+  /* photo band height follows the viewport height so the search stays near the fold in landscape */
+  .hero { --hero-top: clamp(240px, 34vh, 360px); padding: var(--hero-top) var(--gutter) 56px; }
+  .hero-media { height: calc(var(--hero-top) + 260px); }
+  .hero-kicker { font-size: 17px; line-height: 24px; }
+  .hero-title-main { font-size: 64px; line-height: 68px; letter-spacing: -0.8px; }
+  .hero-title-sub { font-size: 30px; line-height: 38px; }
+  .hero-body { max-width: 600px; margin-top: 20px; font-size: 17px; line-height: 28px; }
+  .hero-search { margin-top: 36px; }
+  .hero-tabs { width: max-content; height: 52px; }
+  .hero-tab,
+  .hero-tab--ai { flex: none; height: 52px; padding: 0 40px; font-size: 17px; }
+
+  /* type | divider | where on the first row, the submit button full width below */
+  .hero-card {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) 1px minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 18px;
+    align-items: center;
+    padding: 22px 28px 24px;
+    border-radius: 0 8px 8px 8px;
+  }
+  .hero-divider--1 { width: 1px; height: 56px; }
+  .hero-submit { grid-column: 1 / -1; margin-top: 0; height: 56px; font-size: 17px; }
+
+  /* ---- trusted developers: title row, then all 8 logos in one row ---- */
+  .developers { padding: 32px var(--gutter); grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 20px 16px; }
+  .developers-title { font-size: 13px; }
+
+  /* ---- shared section padding + heading scale ---- */
+  .projects { padding: 64px var(--gutter) 8px; }
+  .markets { padding: 40px var(--gutter) 24px; }
+  .insights { padding: 64px var(--gutter) 48px; }
+  .awards { padding: 64px var(--gutter); }
+  .consult { padding: 88px var(--gutter); }
+  .why { padding: 64px var(--gutter); }
+  .offices { padding: 64px var(--gutter) 24px; }
+  .stats { padding: 8px var(--gutter) 64px; }
+  .stories { padding: 64px var(--gutter); }
+  .journey { padding: 56px var(--gutter) 72px; }
+  .values { padding: 56px var(--gutter) 64px; }
+  .dream { padding: 56px var(--gutter) 24px; }
+  .faq { padding: 0 var(--gutter) 64px; }
+  .site-footer { padding: 56px var(--gutter) 48px; }
+
+  .projects-title { font-size: 32px; line-height: 42px; }
+  .markets-title,
+  .insights__title,
+  .awards__title,
+  .why__title,
+  .offices__title { font-size: 32px; line-height: 42px; }
+  .stories-title,
+  .events-title,
+  .values-title { font-size: 34px; line-height: 44px; }
+  .consult__title { font-size: 38px; line-height: 46px; }
+  .projects-eyebrow,
+  .markets-eyebrow,
+  .insights__eyebrow,
+  .awards__eyebrow,
+  .why__eyebrow,
+  .offices__eyebrow,
+  .stories-eyebrow,
+  .events-eyebrow { font-size: 15px; }
+  .markets-intro,
+  .insights__body,
+  .awards__body,
+  .why__body,
+  .offices__body,
+  .consult__body,
+  .stories-body,
+  .events-body,
+  .journey-body,
+  .values-sub { max-width: 640px; font-size: 16px; line-height: 26px; }
+
+  /* ---- horizontal rails: bleed to the screen edge using the tablet gutter ---- */
+  .projects-chips { margin: 0; padding: 0; }
+  .projects-grid,
+  .markets-grid,
+  .insights__grid,
+  .offices__grid {
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+  }
+  .insights__grid,
+  .offices__grid { grid-auto-columns: 320px; }
+
+  /* ---- projects: chips and "view all" on one row ---- */
+  .projects-toolbar { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; }
+  .projects-viewall { align-self: center; flex: none; }
+  .pcard { flex-basis: 300px; width: 300px; }
+  .pcard-media,
+  .pcard-img { height: 170px; }
+
+  /* ---- markets ---- */
+  .mcard,
+  .mcard:nth-child(5) { flex-basis: 240px; width: 240px; }
+  .mcard-media { height: 150px; }
+
+  /* ---- stats: the four cells in one row ---- */
+  .stats__bar { grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 4px 0; }
+  .stats__cell:nth-child(n)::after { content: none; }
+  .stats__cell:nth-child(n + 2)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 28px;
+    bottom: 28px;
+    width: 1px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.85);
+    transform: none;
+  }
+
+  /* ---- stories ---- */
+  .stories-body { max-width: 560px; }
+  .stories-quote { padding: 20px 22px 22px; }
+  .stories-quote-text { font-size: 14.5px; line-height: 23px; }
+
+  /* ---- events ---- */
+  .events-intro { padding: 0 var(--gutter); }
+  .events-track { padding: 0 var(--gutter); scroll-padding-inline: var(--gutter); gap: 16px; }
+  .events-track::after { flex-basis: calc(100% - 16px - 360px); }
+  .events-card,
+  .events-card.is-large { flex: 0 0 360px; max-width: 360px; height: 380px; }
+  .events-next { margin-right: var(--gutter); }
+
+  /* ---- journey: each step = text beside its photo ---- */
+  .journey-title { font-size: 34px; }
+  .journey-eyebrow,
+  .journey-title,
+  .journey-body { margin-inline: 36px; }
+  .journey-banner { padding-top: 44px; }
+  .journey-commit-title { font-size: 18px; line-height: 28px; }
+  .journey-commit-body { max-width: 520px; font-size: 15px; line-height: 24px; }
+  .journey-step { grid-template-columns: 40px minmax(0, 1fr) 64px minmax(0, 1fr); column-gap: 20px; }
+  .journey-step-body { font-size: 15px; line-height: 24px; }
+  .journey-step-img { grid-column: 4; grid-row: 1 / span 4; margin-top: 0; }
+
+  /* ---- values ---- */
+  .values-photo {
+    max-height: 480px;
+    aspect-ratio: 16 / 9;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+  }
+  .value-title { font-size: 15px; line-height: 22px; }
+  .value-body { font-size: 13px; line-height: 21px; }
+
+  /* ---- dream home ---- */
+  .dream { --dream-fig: min(100%, 520px); }
+  .dream-title { font-size: min(42px, calc((100vw - 2 * var(--gutter)) / 12.7)); }
+  .dream-body { max-width: 680px; font-size: 16px; }
+  .dream-cta { width: max-content; padding: 0 40px; }
+
+  /* ---- faq ---- */
+  .faq-photo {
+    aspect-ratio: 16 / 9;
+    max-height: 480px;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+  }
+  .faq-title { font-size: min(42px, calc((100vw - 2 * var(--gutter)) / 12.1)); }
+  .faq-lead { max-width: 680px; font-size: 16px; }
+  .faq-actions { flex-direction: row; flex-wrap: wrap; }
+  .faq-btn--primary,
+  .faq-btn--secondary { width: auto; padding: 0 28px; }
+  .faq-q button { font-size: 16px; }
+
+  /* ---- footer: brand on top, then contact + two link columns ---- */
+  .site-footer { grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+  .footer-col--contact { grid-column: auto; }
+}
+
+/* Larger tablets / small laptops: denser grids */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .hero { --hero-top: clamp(240px, 34vh, 400px); }
+  .hero-title-main { font-size: 72px; line-height: 76px; }
+
+  /* search card on one row like the desktop design */
+  .hero-card { grid-template-columns: minmax(0, 220px) 1px minmax(0, 1fr) auto; }
+  .hero-submit { grid-column: auto; width: auto; padding: 0 40px; }
+
+  /* projects: all cards visible in a 4-column grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .pcard { width: auto; }
+
+  .awards__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .why__cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  /* stories: video card beside the playlist */
+  .stories { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); column-gap: 28px; align-items: start; }
+  .stories-intro { grid-column: 1 / -1; }
+  .stories-card { grid-column: 1; grid-row: 2; }
+  .stories-dots { grid-column: 1; grid-row: 3; }
+  .stories-list { grid-column: 2; grid-row: 2 / span 2; margin-top: 32px; }
+
+  /* values: four cards in a row */
+  .values-panel { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .value-card:nth-child(n)::after { content: none; }
+  .value-card:nth-child(n + 2)::before {
+    content: "";
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+    width: 1px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.18);
+  }
+
+  /* faq: help block beside the accordion */
+  .faq-panel { display: grid; grid-template-columns: 300px minmax(0, 1fr); }
+  .faq-help { grid-template-columns: minmax(0, 1fr); padding: 28px 28px 24px; }
+  .faq-help-icon { grid-row: auto; margin-bottom: 12px; }
+  .faq-help::after { left: auto; right: 0; top: 24px; bottom: 24px; width: 1px; height: auto; }
+  .faq-list { padding: 10px 28px 14px; }
+
+  .site-footer { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)); }
+  .footer-brand { grid-column: auto; }
+}

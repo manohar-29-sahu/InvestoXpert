@@ -1,0 +1,107 @@
+/* why — design y 4369..4805 (height 436px) in the 1440px Figma frame. Keep the height exact. */
+.why {
+  position: relative;
+  height: 436px;
+  background: #f4f2f1;
+  overflow: hidden;
+}
+
+/* Left column (x 160). Offsets are measured from the section top. */
+.why__intro { position: absolute; left: 160px; top: 0; width: 230px; height: 100%; }
+.why__eyebrow,
+.why__title,
+.why__body,
+.why__link { position: absolute; left: 0; white-space: nowrap; }
+.why__eyebrow {
+  top: 100px;
+  font-size: 12.05px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #e51a4b;
+}
+.why__title {
+  top: 126.6px;
+  font-size: 20.77px;
+  line-height: 31px;
+  font-weight: 500;
+  color: #070a0f;
+}
+.why__body {
+  top: 197.9px;
+  width: 220px;
+  white-space: normal;
+  font-size: 11.89px;
+  line-height: 18px;
+  color: #070a0f;
+}
+.why__link {
+  top: 297.8px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 10.55px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #000;
+}
+.why__arrow {
+  position: absolute;
+  left: 122px;
+  top: 2.3px;
+  width: 11px;
+  height: 10px;
+  fill: #e51a4b;
+  transition: transform 0.2s ease;
+}
+.why__link:hover .why__arrow,
+.why__link:focus-visible .why__arrow { transform: translateX(3px); }
+
+/* Cards: x 516 / 712 / 907 / 1103, y 4468..4704. */
+.why__cards { position: absolute; inset: 0; }
+.why-card {
+  position: absolute;
+  top: 99px;
+  width: 179px;
+  height: 237px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.075),
+    0 5.5px 6px -4px rgba(0, 0, 0, 0.22),
+    0 0.5px 1px 0.5px rgba(0, 0, 0, 0.06);
+}
+.why-card:nth-child(1) { left: 516px; }
+.why-card:nth-child(2) { left: 712px; width: 178px; }
+.why-card:nth-child(3) { left: 907px; }
+.why-card:nth-child(4) { left: 1103px; }
+
+.why-card__icon {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 50%;
+}
+.why-card__icon svg { width: 24px; height: 24px; overflow: visible; }
+.why-card--pink .why-card__icon { background: #fae8f3; fill: #e51a4b; }
+.why-card--green .why-card__icon { background: #d8ffe4; fill: #289048; }
+.why-card--blue .why-card__icon { background: #e8f8ff; fill: #0095da; }
+.why-card--orange .why-card__icon { background: #fff2dd; fill: #f7a92d; }
+
+.why-card__title,
+.why-card__body { position: absolute; left: 18.4px; color: #111; }
+.why-card__title {
+  top: 77.95px;
+  font-size: 12.27px;
+  line-height: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.why-card__body {
+  top: 105.15px;
+  width: 142px;
+  font-size: 11.66px;
+  line-height: 18px;
+  font-weight: 400;
+}

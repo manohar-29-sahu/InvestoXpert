@@ -1,0 +1,61 @@
+/* footer — design y 11083..11579 (height 496px) in the 1440px Figma frame. Keep the height exact. */
+.site-footer {
+  position: relative;
+  height: 496px;
+  background: #000;
+  overflow: hidden;
+  color: #fff;
+}
+
+.footer-logo {
+  position: absolute;
+  left: 79.97px;
+  top: 153.8px;
+  width: 142.3px;
+}
+.footer-logo img { width: 142.3px; height: auto; }
+.footer-about {
+  position: absolute;
+  left: 80.05px;
+  top: 246.6px;
+  width: 336px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.footer-col { position: absolute; top: 153.82px; }
+.footer-col--contact { left: 466.02px; width: 330px; }
+.footer-col--links { left: 845.99px; }
+.footer-col--resources { left: 1136.96px; }
+.footer-heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  white-space: nowrap;
+}
+.footer-list {
+  display: grid;
+  gap: 12px;
+  margin: 12.78px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.footer-address { font-style: normal; width: 320px; }
+.footer-link {
+  display: inline-block;
+  color: #fff;
+  font: inherit;
+  line-height: 24px;
+  white-space: nowrap;
+  text-align: left;
+  transition: color 0.15s ease;
+}
+.footer-link:hover { color: #f9d1db; }
+.footer-col--contact .footer-list { margin-top: 12.18px; }
+.footer-col--resources .footer-list { margin-top: 12.4px; }

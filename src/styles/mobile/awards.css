@@ -1,0 +1,107 @@
+/* Phone layout (< 1200px: phones and tablets) for the awards section. Desktop rules live in ../awards.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Heading, then the four cards stacked (image on top), then the full-width "view all" bar. */
+  .awards {
+    height: auto;
+    padding: 48px 16px;
+  }
+  .awards__eyebrow,
+  .awards__title,
+  .awards__body {
+    position: static;
+    white-space: normal;
+  }
+  .awards__eyebrow { font-size: 14px; line-height: 20px; }
+  .awards__title { margin-top: 8px; font-size: 24px; line-height: 32px; text-wrap: balance; }
+  .awards__body { margin-top: 10px; font-size: 14px; line-height: 22px; text-wrap: pretty; }
+  /* the desktop line break would leave an orphan here; the TSX keeps a space before it */
+  .awards__body br { display: none; }
+
+  .awards__grid {
+    position: static;
+    inset: auto;
+    pointer-events: auto;
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .acard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 12px;
+  }
+  /* Same crop as desktop: box keeps the 246:180 ratio, image offsets converted to percentages. */
+  .acard__media {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 246 / 180;
+  }
+  .acard__img--0 { left: -5.2%; top: -1.5%; width: 110.49%; height: 103%; }
+  .acard__img--1 { left: -0.37%; top: -71.89%; width: 100.37%; height: 244%; }
+  .acard__img--2 { left: 0; top: -12.56%; width: 100.41%; height: 183%; }
+  .acard__img--3 { left: -56.99%; top: -21.72%; width: 192.44%; height: 175.33%; }
+
+  .acard__body,
+  .acard--0 .acard__body,
+  .acard--1 .acard__body,
+  .acard--3 .acard__body {
+    position: static;
+    width: auto;
+    flex: 1;
+    padding: 16px 4px 0;
+  }
+  .acard--2 .acard__tag { position: static; }
+  .acard__tag {
+    width: auto;
+    min-width: 107px;
+    height: 28px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 28px;
+  }
+  .acard__title { margin-top: 12px; font-size: 16px; line-height: 24px; }
+  .acard__detail { margin-top: 8px; width: auto; font-size: 13px; line-height: 20px; }
+  .acard__detail--tall { min-height: 0; }
+  .acard__foot {
+    margin-top: auto;
+    padding-top: 8px;
+    width: auto;
+    align-self: stretch;
+    height: auto;
+    min-height: 40px;
+  }
+  .acard__more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .acard__source { top: 0; font-size: 13px; line-height: 20px; }
+  .acard__logo { top: 0; margin-right: 4px; }
+  .acard__logo svg { width: 22px; height: 15px; }
+
+  /* two columns once there is room (cards keep equal height, footers aligned) */
+  @media (min-width: 560px) {
+    .awards__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  }
+
+  .awards__all {
+    position: static;
+    display: block;
+    margin-top: 28px;
+    width: auto;
+    height: 44px;
+    font-size: 14px;
+    line-height: 44px;
+  }
+}

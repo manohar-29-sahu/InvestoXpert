@@ -1,0 +1,109 @@
+/* dream — design y 9754..10336 (height 582px) in the 1440px Figma frame. Keep the height exact. */
+.dream {
+  position: relative;
+  height: 582px;
+  background: #ebebeb;
+  overflow: hidden;
+  box-shadow:
+    inset 1px 0 0 #d9d9d9,
+    inset -1px 0 0 #d9d9d9,
+    inset 0 -1px 0 #d9d9d9,
+    inset 0 1px 0 #dfdfdf,
+    inset 2px 0 0 #e8e8e8,
+    inset 0 -2px 0 #e4e4e4;
+}
+
+.dream-title {
+  position: absolute;
+  left: 160.05px;
+  top: 100.13px;
+  margin: 0;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 80px;
+  letter-spacing: -0.56px;
+  color: #111;
+  white-space: nowrap;
+}
+.dream-body {
+  position: absolute;
+  left: 160.05px;
+  top: 286.71px;
+  width: 760px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.11px;
+  color: #111;
+}
+
+.dream-cta {
+  position: absolute;
+  left: 160.05px;
+  top: 390.71px;
+  width: 269.95px;
+  height: 56px;
+  border-radius: 8px;
+  background: #e51a4b;
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+.dream-cta:hover { background: #cc1540; }
+.dream-cta-label {
+  position: absolute;
+  left: 14px;
+  top: 15.48px;
+  font-size: 18.5px;
+  font-weight: 500;
+  line-height: 27px;
+  white-space: nowrap;
+}
+.dream-cta-arrow {
+  position: absolute;
+  left: 244.95px;
+  top: 23.39px;
+  overflow: visible;
+  transition: transform 0.15s ease;
+}
+.dream-cta:hover .dream-cta-arrow { transform: translateX(3px); }
+
+/* cut-out family photo (mirrored) and its floor reflection */
+.dream-figure {
+  position: absolute;
+  left: 888.98px;
+  top: 99.89px;
+  width: 551px;
+  height: 381.91px;
+  overflow: hidden;
+}
+.dream-family {
+  position: absolute;
+  left: -0.85px;
+  top: -0.33px;
+  width: 572.67px;
+  max-width: none;
+  height: 381.97px;
+  transform: scaleX(-1);
+}
+.dream-reflection {
+  position: absolute;
+  left: 888.98px;
+  top: 436px;
+  width: 551px;
+  height: 50px;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+  mask-image: linear-gradient(to bottom, #000, transparent);
+}
+.dream-reflection img {
+  position: absolute;
+  left: -0.85px;
+  top: -43.62px;
+  width: 572.67px;
+  max-width: none;
+  height: 381.97px;
+  transform: scale(-1, -1);
+  opacity: 0.25;
+}

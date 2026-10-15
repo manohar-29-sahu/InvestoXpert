@@ -1,0 +1,164 @@
+/* awards — design y 3126..3903 (height 777px) in the 1440px Figma frame. Keep the height exact. */
+.awards {
+  position: relative;
+  height: 777px;
+  background: #eff4f7;
+  overflow: hidden;
+}
+
+/* ---- heading ---- */
+.awards__eyebrow {
+  position: absolute;
+  left: 160px;
+  top: 104px;
+  font-size: 15.4px;
+  line-height: 1;
+  font-weight: 500;
+  color: #e51a4b;
+  white-space: nowrap;
+}
+.awards__title {
+  position: absolute;
+  left: 160px;
+  top: 140px;
+  font-size: 25.2px;
+  line-height: 1;
+  font-weight: 500;
+  color: #000;
+  white-space: nowrap;
+}
+.awards__body {
+  position: absolute;
+  left: 160px;
+  top: 183.3px;
+  font-size: 11.2px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #77797b;
+  white-space: nowrap;
+}
+
+/* ---- cards ---- */
+.awards__grid { position: absolute; inset: 0; pointer-events: none; }
+.acard {
+  pointer-events: auto;
+  position: absolute;
+  width: 542px;
+  height: 207px;
+  background: #fff;
+  border: 1px solid #ebe6e6;
+  border-radius: 6px;
+  box-shadow: 0 12px 16px -8px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.05);
+}
+.acard--0 { left: 160px; top: 226px; }
+.acard--1 { left: 738px; top: 226px; }
+.acard--2 { left: 160px; top: 470px; }
+.acard--3 { left: 738px; top: 470px; }
+
+.acard__media {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  width: 246px;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background: #333;
+}
+.acard__img { position: absolute; max-width: none; }
+.acard__img--0 { left: -12.8px; top: -2.7px; width: 271.8px; height: 185.4px; }
+.acard__img--1 { left: -0.9px; top: -129.4px; width: 246.9px; height: 439.2px; }
+.acard__img--2 { left: 0; top: -22.6px; width: 247px; height: 329.4px; }
+.acard__img--3 { left: -140.2px; top: -39.1px; width: 473.4px; height: 315.6px; }
+
+.acard__body {
+  position: absolute;
+  left: 282px;
+  top: 0;
+  bottom: 0;
+  width: 252px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.acard--0 .acard__body,
+.acard--1 .acard__body { top: -1px; }
+.acard--3 .acard__body { top: 2px; }
+.acard--1 .acard__body,
+.acard--3 .acard__body { left: 281.5px; }
+.acard--2 .acard__tag { position: relative; top: 1px; }
+.acard__tag {
+  display: block;
+  width: 107px;
+  height: 27px;
+  border-radius: 3px;
+  background: #e51a4b;
+  color: #fff;
+  font-size: 10px;
+  line-height: 27px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+.acard__title {
+  margin-top: 14.8px;
+  font-size: 14.8px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #000;
+}
+.acard__detail {
+  margin-top: 14.3px;
+  width: 230px;
+  font-size: 9.9px;
+  line-height: 15px;
+  font-weight: 400;
+  color: #000;
+}
+.acard__detail--tall { min-height: 43px; }
+.acard__foot {
+  margin-top: 15px;
+  width: 246px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.acard__more {
+  font-size: 9.9px;
+  line-height: 15px;
+  font-weight: 400;
+  color: #878787;
+}
+.acard__more:hover { color: #e51a4b; }
+.acard__source {
+  position: relative;
+  top: 1px;
+  font-size: 11.1px;
+  line-height: 15px;
+  font-weight: 500;
+  color: #000;
+  white-space: nowrap;
+}
+.acard__logo { display: block; position: relative; top: 1px; margin-right: 6px; }
+
+/* ---- view all bar ---- */
+.awards__all {
+  position: absolute;
+  left: 160px;
+  top: 714px;
+  width: 1120px;
+  height: 35px;
+  border-radius: 4px;
+  background: #e51a4b;
+  color: #fff;
+  font-size: 11.7px;
+  line-height: 37px;
+  font-weight: 500;
+  text-align: center;
+  white-space: pre;
+  box-shadow: 0 12px 16px -8px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.15s ease;
+}
+.awards__all:hover { background: #cc1541; }

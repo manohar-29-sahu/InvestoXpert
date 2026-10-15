@@ -1,0 +1,74 @@
+/* Phone layout (< 1200px: phones and tablets) for the why section. Desktop rules live in ../why.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Intro block, then the four reason cards: one column (icon beside the text), two columns from 560px. */
+  .why {
+    height: auto;
+    padding: 48px 16px;
+  }
+  .why__intro {
+    position: static;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .why__eyebrow,
+  .why__title,
+  .why__body,
+  .why__link {
+    position: static;
+    white-space: normal;
+  }
+  .why__eyebrow { font-size: 13px; line-height: 20px; }
+  .why__title { margin-top: 8px; font-size: 24px; line-height: 32px; }
+  .why__body { margin-top: 12px; width: auto; max-width: 520px; font-size: 14px; line-height: 22px; text-wrap: pretty; }
+  .why__link {
+    margin-top: 6px;
+    min-height: 40px;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .why__arrow { position: static; width: 13px; height: 12px; }
+
+  .why__cards {
+    position: static;
+    inset: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .why__cards .why-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 18px 18px 20px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 16px;
+    align-content: start;
+  }
+  .why-card__icon {
+    position: static;
+    grid-row: 1 / span 2;
+  }
+  .why-card__title,
+  .why-card__body {
+    position: static;
+    width: auto;
+    white-space: normal;
+  }
+  .why-card__title { align-self: end; font-size: 15px; line-height: 22px; }
+  .why-card__body { margin-top: 6px; font-size: 13.5px; line-height: 21px; }
+
+  @media (min-width: 560px) {
+    .why__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .why__cards .why-card { grid-template-columns: minmax(0, 1fr); }
+    .why-card__icon { grid-row: auto; }
+    .why-card__title { margin-top: 14px; }
+  }
+}

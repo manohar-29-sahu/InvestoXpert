@@ -1,0 +1,39 @@
+/* header — absolutely positioned over the hero (design y 0..100) */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 100px;
+  z-index: 20;
+}
+
+.site-logo {
+  position: absolute;
+  left: 100px;
+  top: clamp(18px, 2.5vh, 32px);
+  width: 143px;
+  height: 60px;
+}
+.site-logo img { width: 143px; height: 60px; max-width: none; }
+
+.header-contact {
+  position: absolute;
+  left: 1186px;
+  top: clamp(18px, 2.5vh, 28px);
+  width: 154px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  background: #fff;
+  padding-top: 1px;
+  color: #32353b;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.header-contact:hover { background: #f1f1f1; }

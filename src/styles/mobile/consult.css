@@ -1,0 +1,50 @@
+/* Phone layout (< 1200px: phones and tablets) for the consult section. Desktop rules live in ../consult.css — never edit those here. */
+@media (max-width: 1199px) {
+  /*
+   * consult.png has the desktop copy baked in (image x ~17%..57%). On phones the photo is right-aligned and
+   * scaled so the visible slice always stays right of that text (visible width <= 40% of the image), so no
+   * baked glyphs can show; the eroded patch layer is not needed. A dark overlay keeps the HTML copy legible.
+   */
+  .consult {
+    height: auto;
+    padding: 64px 16px;
+  }
+  .consult__bg {
+    /* image is 1904x615: height >= 0.81 x width keeps the visible slice inside the text-free right part */
+    background-size: auto max(100% + 4px, 81vw);
+    background-position: 100% 50%;
+  }
+  .consult::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(8, 6, 5, 0.62) 0%, rgba(8, 6, 5, 0.3) 100%),
+      linear-gradient(180deg, rgba(8, 6, 5, 0) 40%, rgba(8, 6, 5, 0.35) 100%);
+  }
+  .consult__inner {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .consult__eyebrow,
+  .consult__title,
+  .consult__body,
+  .consult__cta {
+    position: static;
+    white-space: normal;
+  }
+  .consult__eyebrow { font-size: 17px; line-height: 22px; letter-spacing: -0.3px; }
+  .consult__title { margin-top: 12px; font-size: 30px; line-height: 36px; }
+  .consult__body { margin-top: 14px; width: auto; max-width: 520px; font-size: 14px; line-height: 22px; text-wrap: pretty; }
+  .consult__cta {
+    margin-top: 28px;
+    width: auto;
+    height: 44px;
+    padding: 0 24px 1px;
+    font-size: 14px;
+  }
+}

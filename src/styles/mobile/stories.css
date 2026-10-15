@@ -1,0 +1,72 @@
+/* Phone layout (< 1200px: phones and tablets) for the stories section. Desktop rules live in ../stories.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Stack: intro, video card, dots, playlist */
+  .stories {
+    height: auto;
+    padding: 48px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Intro */
+  .stories-intro { position: static; width: auto; height: auto; display: flex; flex-direction: column; align-items: flex-start; }
+  .stories-eyebrow,
+  .stories-title,
+  .stories-body,
+  .stories-watch { position: static; }
+  .stories-eyebrow { font-size: 14px; line-height: 22px; letter-spacing: 0.02em; }
+  .stories-title { margin-top: 6px; white-space: normal; font-size: 28px; line-height: 38px; }
+  .stories-body { margin-top: 12px; width: auto; max-width: 420px; font-size: 14px; line-height: 22px; font-weight: 500; }
+  .stories-watch {
+    position: relative; left: auto; top: auto; margin-top: 20px; width: auto; height: 44px;
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .stories-watch-icon { position: relative; left: auto; top: auto; flex: 0 0 auto; width: 44px; height: 44px; }
+  .stories-watch-icon svg { left: 15.5px; top: 12.5px; }
+  .stories-watch-label { position: static; font-size: 15px; line-height: 24px; }
+
+  /* Main video card: 16:9 photo + quote box */
+  .stories-card {
+    position: relative; left: auto; top: auto; width: 100%; height: auto; margin-top: 32px;
+    display: flex; flex-direction: column;
+  }
+  .stories-card::before,
+  .stories-card::after { display: none; }
+  .stories-media {
+    position: relative; width: 100%; height: auto; aspect-ratio: 16 / 9;
+    border: 1px solid rgba(255, 255, 255, 0.14); border-bottom: 0; border-radius: 6px 6px 0 0;
+  }
+  .stories-media-img {
+    left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important;
+    object-fit: cover; object-position: 50% 40%;
+  }
+  .stories-play { left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+  .stories-play svg { left: 22px; top: 16.5px; width: 19px; height: 23px; }
+  .stories-media.is-playing .stories-play svg { left: 18px; }
+
+  .stories-quote {
+    position: static; width: auto; padding: 16px 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35); border-top: 0;
+    border-left-color: rgba(255, 255, 255, 0.65); border-radius: 0 0 6px 6px;
+  }
+  .stories-quote-text { font-size: 13px; line-height: 20px; }
+  .stories-quote-author { position: static; margin-top: 12px; font-size: 12.5px; line-height: 18px; white-space: normal; }
+
+  /* Dots: 8px visual dot inside a 32x40 tap target */
+  .stories-dots { position: static; align-self: center; margin-top: 8px; gap: 0; }
+  .stories-dot { position: relative; width: 32px; height: 40px; border-radius: 0; background: none; }
+  .stories-dot::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px;
+    border-radius: 4px; background: rgba(217, 217, 217, 0.45); transition: width 0.2s, margin 0.2s, background 0.2s;
+  }
+  .stories-dot.is-active { background: none; }
+  .stories-dot.is-active::before { width: 20px; margin-left: -10px; background: #d9d9d9; }
+
+  /* Playlist: full-width rows */
+  .stories-list { position: static; width: auto; margin-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .stories-row-wrap { position: static; width: auto; height: 98px; }
+  .stories-row { width: 100%; }
+  .stories-row.is-active { border-color: #4a4644; }
+  .stories-row-name { top: 25px; font-size: 15px; line-height: 22px; }
+  .stories-row-city { top: 51px; font-size: 12px; line-height: 18px; }
+}

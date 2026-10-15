@@ -1,0 +1,105 @@
+/* Base tokens + resets. Section styles live in src/styles/<section>.css */
+:root {
+  --font: var(--font-poppins), "Poppins", system-ui, -apple-system, sans-serif;
+  --font-system: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --pink: #e51a4b;
+  --pink-light: #f9d1db;
+  --red: #e41d25;
+  --ink: #111111;
+  --ink-2: #1a1a1a;
+  --text: #333333;
+  --muted: #777777;
+  --muted-2: #8a8a8a;
+  --line: #e5e5e5;
+  --line-2: #ebeded;
+  --bg-why: #f4f2f1;
+  --bg-awards: #eff4f7;
+  --bg-dream: #ebebeb;
+  --bg-faq-panel: #faf9f9;
+  --grey-btn: #7f7f7f;
+  --stories-bg: #0b1310;
+  --journey-bg: #00060d;
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --design-width: 1440px;
+  --content-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: #000;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+svg { display: block; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+.container { width: var(--content-width); margin-inline: auto; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Shared button primitives (sections override sizes) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.btn-outline { background: #fff; color: var(--ink); border: 1px solid #ddd; }
+.btn-grey { background: var(--grey-btn); color: #fff; }
+
+/* Contact dialog (ContactProvider) */
+.modal-root { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 20px; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); border: 0; }
+.modal { position: relative; width: min(480px, 100%); background: #fff; border-radius: 8px; padding: 28px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25); }
+.modal .eyebrow { color: var(--pink); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.modal h2 { margin: 6px 0 8px; font-size: 24px; font-weight: 600; line-height: 1.25; }
+.modal-close { position: absolute; top: 10px; right: 14px; font-size: 24px; line-height: 1; color: var(--muted); }
+.modal-topic { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.contact-form { display: grid; gap: 10px; }
+.contact-form label { display: grid; gap: 4px; font-size: 13px; font-weight: 500; }
+.contact-form input, .contact-form textarea { border: 1px solid #ddd; border-radius: 4px; padding: 10px 12px; font-weight: 400; }
+.contact-form .btn { height: 44px; margin-top: 4px; }
+.modal-success { background: #f4fff6; border-radius: 6px; padding: 12px; font-size: 14px; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Page frame: the design is a fixed 1440px canvas; FitScale zooms it on narrower screens. */
+.page { position: relative; width: var(--design-width); margin-inline: auto; }
+
+/* Phones: drop the fixed 1440 canvas; each section's phone rules live in src/styles/mobile/<section>.css */
+@media (max-width: 1199px) {
+  body { min-width: 0; }
+  .page { width: 100%; overflow-x: hidden; }
+  .container { width: auto; margin-inline: 16px; }
+}

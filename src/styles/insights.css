@@ -1,0 +1,268 @@
+/* insights — design y 2281..3126 (height 845px) in the 1440px Figma frame. Keep the height exact. */
+.insights {
+  position: relative;
+  height: 845px;
+  background: linear-gradient(#eff4f7 0 1px, #fcfdfd 1px 2px, #ffffff 2px);
+  overflow: hidden;
+}
+
+/* ---- heading ---- */
+.insights__eyebrow {
+  position: absolute;
+  left: 160px;
+  top: 105px;
+  font-size: 17.4px;
+  line-height: 1;
+  font-weight: 500;
+  color: #e51a4b;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.insights__title {
+  position: absolute;
+  left: 160px;
+  top: 142px;
+  font-size: 21.8px;
+  line-height: 1;
+  font-weight: 500;
+  color: #070a0f;
+  white-space: nowrap;
+}
+.insights__body {
+  position: absolute;
+  left: 160px;
+  top: 180.3px;
+  font-size: 11.2px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #7f7f7f;
+  white-space: nowrap;
+}
+
+/* ---- arrows ---- */
+.insights__arrow {
+  position: absolute;
+  top: 433px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e62f5b;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.insights__arrow:hover { background: #d0244e; }
+.insights__arrow:active { transform: scale(0.96); }
+.insights__arrow--prev { left: 110px; }
+.insights__arrow--next { left: 1310px; }
+
+/* ---- cards ---- */
+.insights__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.icard {
+  pointer-events: auto;
+  position: absolute;
+  width: 542px;
+  height: 207px;
+  background: #fff;
+  border: 1px solid #ebe6e6;
+  border-radius: 6px;
+  box-shadow: 0 12px 16px -8px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.06);
+}
+.icard--0 { left: 170px; top: 233px; }
+.icard--1 { left: 748px; top: 233px; }
+.icard--2 { left: 170px; top: 477px; }
+.icard--3 { left: 748px; top: 477px; }
+
+.icard__media {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  width: 246px;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background: #222;
+}
+.icard__img {
+  position: absolute;
+  max-width: none;
+  left: -1px;
+  width: 247px;
+  height: 308.8px;
+}
+.icard__img--uni { top: -38.8px; }
+.icard__img--outlook { top: -53.8px; }
+.icard__img--news18 { left: -0.7px; width: 247.7px; height: 309.6px; top: -53.6px; }
+.icard__img--timesproperty { top: -53.3px; }
+
+.icard__body {
+  position: absolute;
+  left: 282px;
+  top: 0;
+  bottom: 0;
+  width: 252px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.icard--1 .icard__body,
+.icard--3 .icard__body { left: 281.4px; }
+.icard--2 .icard__body,
+.icard--3 .icard__body { top: 2px; }
+/* sub-pixel compensation so slot 2 matches the design's rounding */
+.icard--1 .icard__title,
+.icard--1 .icard__excerpt,
+.icard--1 .icard__foot { position: relative; top: 1px; }
+.icard__tag {
+  display: block;
+  width: 107px;
+  height: 27px;
+  padding-left: 11.3px;
+  border-radius: 3px;
+  background: #e51a4b;
+  color: #fff;
+  font-size: 10px;
+  line-height: 27px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.icard__title {
+  margin-top: 14px;
+  font-size: 14.8px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #000;
+}
+.icard__excerpt {
+  margin-top: 15px;
+  width: 228px;
+  max-height: 45px;
+  font-size: 9.9px;
+  line-height: 15px;
+  font-weight: 400;
+  color: transparent;
+  background: linear-gradient(180deg, #383838 0px, #ffffff 53px);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.icard__excerpt--solid {
+  min-height: 30px;
+  color: #000;
+  background: none;
+}
+.icard__foot {
+  margin-top: 13px;
+  width: 241px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icard__more {
+  font-size: 9.9px;
+  line-height: 15px;
+  font-weight: 400;
+  color: #878787;
+}
+.icard__more:hover { color: #e51a4b; }
+
+/* ---- source marks (publication logos) ---- */
+.src { display: inline-flex; position: relative; flex: none; white-space: nowrap; }
+.src--uni {
+  top: 1px;
+  margin-right: 1px;
+  flex-direction: column;
+  align-items: center;
+  width: 19px;
+  height: 9px;
+  color: #d1a609;
+}
+.src-uni__big {
+  font-family: "Arial Black", var(--font-system);
+  font-weight: 900;
+  font-size: 9px;
+  line-height: 7px;
+  letter-spacing: -0.6px;
+}
+.src-uni__small {
+  font-family: var(--font-system);
+  font-weight: 700;
+  font-size: 2px;
+  line-height: 2px;
+  transform: scale(0.9);
+}
+.src--outlook {
+  top: 2.5px;
+  font-family: "Rockwell Extra Bold", "Rockwell", "Arial Black", var(--font-system);
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 9px;
+  color: #df011a;
+  letter-spacing: -0.2px;
+}
+.src--news18 {
+  top: 1px;
+  margin-right: 2px;
+  width: 21px;
+  height: 9px;
+  font-family: var(--font-system);
+  font-weight: 800;
+}
+.src-n18__news {
+  position: absolute;
+  left: 0;
+  top: 1.5px;
+  height: 5.5px;
+  padding: 0 0.8px;
+  background: #011d41;
+  color: #fff;
+  font-size: 5px;
+  line-height: 5.5px;
+}
+.src-n18__num {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  background: #d43329;
+  color: #fff;
+  font-size: 4.2px;
+  line-height: 5px;
+  text-align: center;
+}
+.src-n18__net {
+  position: absolute;
+  left: 3px;
+  top: 7.4px;
+  font-size: 1.6px;
+  line-height: 1.6px;
+  letter-spacing: 0.6px;
+  color: #011d41;
+}
+.src--times {
+  top: 1px;
+  align-items: flex-end;
+  height: 9px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 11.1px;
+  line-height: 9px;
+  letter-spacing: -0.4px;
+}
+.src-times__a { color: #1a1a1a; }
+.src-times__b { color: #a3093e; }
+.src-times__com {
+  font-family: var(--font-system);
+  font-size: 2px;
+  line-height: 2px;
+  writing-mode: vertical-rl;
+  color: #a3093e;
+  margin-left: 0.5px;
+  align-self: center;
+}

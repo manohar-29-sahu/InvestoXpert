@@ -1,0 +1,60 @@
+/* Phone layout (< 1200px: phones and tablets) for the events section. Desktop rules live in ../events.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Stack: intro + button, then a full-bleed horizontal scroll-snap rail of cards, then the arrow */
+  .events {
+    height: auto;
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Intro */
+  .events-intro { position: static; width: auto; height: auto; padding: 0 16px; display: flex; flex-direction: column; align-items: flex-start; }
+  .events-eyebrow,
+  .events-title,
+  .events-body { position: static; }
+  .events-eyebrow { font-size: 14px; line-height: 22px; }
+  .events-title { margin-top: 6px; white-space: normal; font-size: 26px; line-height: 36px; }
+  .events-body { margin-top: 12px; width: auto; max-width: 420px; font-size: 14px; line-height: 22px; }
+  .events-cta.events-cta {
+    position: relative; left: auto; top: auto; margin-top: 20px; width: auto; height: 44px; padding: 0 16px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .events-cta span { position: static; font-size: 14px; line-height: 20px; }
+  .events-cta-arrow { position: static; flex: 0 0 auto; width: 12px; height: 12px; }
+
+  /* Cards rail */
+  .events-track {
+    position: relative; left: auto; top: auto; width: auto; height: auto; margin-top: 28px;
+    gap: 12px; padding: 0 16px; scroll-padding-inline: 16px; overscroll-behavior-x: contain;
+  }
+  /* trailing spacer so the last card can snap to the start edge too (keeps every stop, incl. the arrow's, on a card) */
+  .events-track::after { content: ""; flex: 0 0 calc(100% - 12px - min(80%, 320px)); }
+  /* the duplicate (aria-hidden) set only exists for the desktop wrap-around */
+  .events-card[aria-hidden="true"] { display: none; }
+  .events-card,
+  .events-card.is-large { flex: 0 0 80%; max-width: 320px; height: 300px; border-radius: 6px; }
+  .events-card-img {
+    left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important;
+    object-fit: cover;
+  }
+  .events-card::after { background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.92) 100%); }
+  .events-card-info {
+    left: 16px; right: 16px; bottom: 16px; height: auto;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  }
+  .events .events-card .events-card-title {
+    position: static; width: auto; white-space: normal;
+    font-size: 14px; line-height: 20px; letter-spacing: 0.01em;
+  }
+  .events-card-city { position: static; font-size: 13px; line-height: 18px; }
+  .events-card-count { position: relative; left: auto; bottom: auto; font-size: 12.5px; line-height: 18px; padding-left: 20px; }
+  .events-card-icon { top: 2px; width: 14px; height: 14px; }
+
+  /* Arrow: right-aligned under the rail (scrolls one card) */
+  .events-next {
+    position: relative; left: auto; top: auto; align-self: flex-end;
+    margin: 16px 16px 0 0; width: 44px; height: 44px; flex: 0 0 auto;
+  }
+  .events-next svg { width: 44px; height: 44px; }
+}

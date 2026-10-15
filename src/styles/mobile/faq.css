@@ -1,0 +1,161 @@
+/* Phone layout (< 1200px: phones and tablets) for the faq section. Desktop rules live in ../faq.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* stacked: full-bleed photo, eyebrow/title/lead, stacked CTAs, then the grey panel (help block above the accordion) */
+  .faq {
+    min-height: 0;
+    padding: 0 16px 48px;
+  }
+  .faq::after { display: none; }
+
+  .faq-photo {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    max-height: 400px;
+    margin: 0 -16px;
+  }
+  .faq-photo img {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 45% 50%;
+  }
+  .faq-photo-shade {
+    background: radial-gradient(circle farthest-corner at 50% 49.4%, rgba(0, 0, 0, 0.03), #000);
+  }
+
+  .faq-eyebrow {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-top: 32px;
+    padding-left: 35px;
+    font-size: 13px;
+    white-space: normal;
+  }
+  .faq-eyebrow-line { left: 0; top: 10px; }
+
+  /* sized so "Every Great Investment" stays on one line; the red accent wraps as a unit */
+  .faq-title {
+    position: static;
+    margin-top: 12px;
+    font-size: min(30px, calc((100vw - 32px) / 12.1));
+    line-height: 1.3;
+    white-space: normal;
+  }
+  .faq-accent { white-space: nowrap; }
+  .faq-lead {
+    position: static;
+    width: auto;
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .faq-actions {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .faq-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .faq-btn--primary,
+  .faq-btn--secondary {
+    left: auto;
+    width: 100%;
+  }
+  .faq-btn-label,
+  .faq-btn svg { position: static; }
+  .faq-btn svg { flex: none; }
+
+  /* grey panel: help block on top, accordion full width below */
+  .faq-panel {
+    width: auto;
+    min-height: 0;
+    margin: 40px 0 0;
+  }
+  .faq-help {
+    position: relative;
+    inset: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+    padding: 24px 20px 16px;
+  }
+  .faq-help::after {
+    left: 20px;
+    right: 20px;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 1px;
+  }
+  .faq-help-icon {
+    position: static;
+    grid-row: 1 / span 3;
+    width: 64px;
+    height: 64px;
+  }
+  .faq-help-title {
+    position: static;
+    font-size: 18px;
+    line-height: 26px;
+    white-space: normal;
+  }
+  .faq-help-body {
+    position: static;
+    width: auto;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 21px;
+  }
+  .faq-help-link {
+    position: relative;
+    left: auto;
+    top: auto;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    height: 40px;
+    margin-top: 2px;
+    padding-right: 0;
+  }
+  .faq-help-arrow { position: static; flex: none; }
+
+  .faq-list {
+    width: auto;
+    margin: 0;
+    padding: 6px 20px 10px;
+  }
+  .faq-q button {
+    height: auto;
+    min-height: 52px;
+    padding: 14px 28px 14px 0;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .faq-q-text { top: 0; }
+  .faq-plus {
+    left: auto;
+    right: 4px;
+    top: 50%;
+    margin-top: -4px;
+  }
+  .faq-a { padding: 0 28px 16px 0; }
+}

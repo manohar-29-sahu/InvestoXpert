@@ -1,0 +1,81 @@
+/* Phone layout (< 1200px: phones and tablets) for the stats section. Desktop rules live in ../stats.css — never edit those here. */
+@media (max-width: 1199px) {
+  /* Gradient bar kept, cells in a 2x2 grid: white dividers between the columns and between the rows. */
+  .stats {
+    height: auto;
+    padding: 8px 16px 48px;
+  }
+  .stats__bar {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 8px 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: linear-gradient(135deg, #1c0309 0%, #820f2b 50%, #1c0309 100%);
+  }
+  .stats__cell,
+  .stats__cell--building,
+  .stats__cell--people,
+  .stats__cell--handshake,
+  .stats__cell--pin {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto;
+    min-height: 168px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-wrap: balance;
+  }
+  /* vertical divider on the right-hand cells, horizontal divider above the bottom row */
+  .stats__cell + .stats__cell::before { content: none; }
+  .stats__cell:nth-child(2n)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 24px;
+    bottom: 24px;
+    width: 1px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.85);
+    transform: none;
+  }
+  .stats__cell:nth-child(n + 3)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .stats__cell:nth-child(2n + 1)::after { left: 16px; right: 0; }
+  .stats__cell:nth-child(2n)::after { left: 0; right: 16px; }
+
+  .stats__cell .stats__icon {
+    position: static;
+    flex: none;
+    width: auto;
+    height: 36px;
+    margin-bottom: 10px;
+  }
+  .stats__value,
+  .stats__label,
+  .stats__detail,
+  .stats__cell--pin .stats__label,
+  .stats__cell--pin .stats__detail {
+    position: static;
+    white-space: normal;
+  }
+  .stats__value { font-size: 26px; line-height: 34px; }
+  .stats__label { margin-top: 2px; font-size: 14px; line-height: 20px; }
+  .stats__detail { margin-top: 4px; font-size: 12px; line-height: 17px; opacity: 0.92; }
+  .stats__detail span { display: inline; }
+}

@@ -1,0 +1,71 @@
+/* events — design y 6767..7150 (height 383px) in the 1440px Figma frame. Keep the height exact. */
+.events {
+  position: relative;
+  height: 383px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.events-intro { position: absolute; left: 125.6px; top: 0; width: 270px; height: 100%; }
+.events-eyebrow {
+  position: absolute; left: 0; top: 95.6px; white-space: nowrap;
+  color: #e51a4b; font-size: 13.9px; line-height: 20px; font-weight: 600; text-transform: uppercase;
+}
+.events-title {
+  position: absolute; left: 0; top: 123.6px; white-space: nowrap;
+  color: #000; font-size: 19.6px; line-height: 29.4px; font-weight: 600;
+}
+.events-body {
+  position: absolute; left: 0; top: 191.9px; width: 260px;
+  color: #000; font-size: 11.05px; line-height: 17px; font-weight: 400;
+}
+.events-cta.events-cta {
+  position: absolute; left: 0; top: 258px; width: 127.5px; height: 34.5px;
+  display: block; border-radius: 4px; background: #e51a4b; color: #fff; padding: 0;
+}
+.events-cta span {
+  position: absolute; left: 8.6px; top: 10px; white-space: nowrap;
+  font-size: 11.5px; line-height: 17px; font-weight: 500;
+}
+.events-cta-arrow { position: absolute; left: 110px; top: 12.5px; width: 9px; height: 9px; stroke-width: 2.4; }
+
+/* Cards track: x 407.6 .. 1245.6, y 6867 .. 7060 */
+.events-track {
+  position: absolute; left: 407.6px; top: 100px; width: 838px; height: 193px;
+  display: flex; gap: 5.6px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.events-track::-webkit-scrollbar { display: none; }
+.events-card {
+  position: relative; flex: 0 0 168.6px; height: 193px; border-radius: 4px; overflow: hidden;
+  scroll-snap-align: start; background: #111;
+}
+.events-card.is-large { flex-basis: 315.4px; }
+.events-card-img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.events-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.5%, #000 100%);
+}
+.events-card-info { position: absolute; left: 11.2px; right: 8px; bottom: 0; height: 80px; z-index: 1; color: #fff; }
+.events-card-title {
+  position: absolute; left: 0; bottom: 41.8px; width: 80px;
+  font-size: 8px; line-height: 10px; font-weight: 700; text-transform: uppercase;
+}
+.events-card.is-large .events-card-title { width: auto; white-space: nowrap; bottom: 40.8px; }
+.events-card:nth-child(4n) .events-card-title { width: 60px; }
+.events-card-city {
+  position: absolute; left: 0; bottom: 28.2px; white-space: nowrap;
+  font-size: 7.7px; line-height: 10px; font-weight: 400;
+}
+.events-card-count {
+  position: absolute; left: 0; bottom: 10.8px; white-space: nowrap;
+  font-size: 8px; line-height: 10px; font-weight: 400; padding-left: 14.4px;
+}
+.events-card-icon { position: absolute; left: 0; top: -1px; width: 10px; height: 10px; fill: #fff; }
+
+.events-next {
+  position: absolute; left: 1274.3px; top: 177.4px; width: 40px; height: 40px; border-radius: 50%;
+  background: #e62f5b; color: #fff;
+  box-shadow: 0 0 3px rgba(229, 26, 75, 0.35);
+}
+.events-next svg { position: absolute; inset: 0; width: 40px; height: 40px; stroke-width: 1.3px; }
