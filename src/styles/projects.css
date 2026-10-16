@@ -111,17 +111,17 @@
 /* ---- filter chips + view all ---- */
 .projects-toolbar {
   position: absolute;
-  left: 625.33px;
+  right: 160px;
   top: 122.33px;
   display: flex;
   align-items: center;
-  gap: 21.33px;
+  gap: 16px;
   height: 30.33px;
 }
 
 .projects-chips {
   display: flex;
-  gap: 21.33px;
+  gap: 12px;
 }
 
 .projects-chip {
@@ -139,6 +139,7 @@
   color: #111;
   white-space: nowrap;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .projects-chip:hover {
@@ -151,6 +152,13 @@
   color: #fff;
 }
 
+.projects-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 8px;
+}
+
 .projects-viewall {
   margin-left: 0.31px;
   transform: translateY(0.44px); /* sub-pixel baseline from the design (visible on hi-dpi screens) */
@@ -161,26 +169,75 @@
   line-height: 1.5;
   color: #e51a4b;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .projects-viewall-arrow {
   display: block;
   width: 12px;
   height: 10px;
-  margin-left: 15.49px;
+  margin-left: 8px;
+}
+
+.projects-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projects-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ebeded;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.projects-nav-btn:hover:not(:disabled) {
+  border-color: #e51a4b;
+  color: #e51a4b;
+  background: #fff4f6;
+}
+
+.projects-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 /* ---- cards ---- */
 .projects-grid {
   position: absolute;
   left: 160px;
+  right: 0;
   top: 188.67px;
   display: flex;
   gap: 25px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-top: 10px;
+  padding-bottom: 28px;
+  padding-right: 160px;
+  margin-top: -10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .pcard {
   position: relative;
+  flex: 0 0 256px;
   width: 256px;
   height: 300px;
   background: #fff;
@@ -273,6 +330,9 @@
   margin: 0;
   line-height: 1.5;
   white-space: nowrap;
+  max-width: 224px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pcard-name {
@@ -319,23 +379,24 @@
 }
 
 .pcard-poss {
-  top: 236.19px;
+  top: 235px;
+  max-width: 140px;
 }
 
 .pcard-score {
   position: absolute;
-  left: 146px;
-  top: 235px;
-  display: flex;
+  right: 16px;
+  left: auto;
+  top: 233.5px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 94px;
-  height: 16.33px;
+  height: 18px;
+  padding: 0 8px;
   border: 1px solid #198838;
   border-radius: 999px;
-  padding: 1.6px 1px 0 0;
-  font-size: 6px;
-  font-weight: 500;
+  font-size: 8.5px;
+  font-weight: 600;
   color: #198838;
   white-space: nowrap;
 }
